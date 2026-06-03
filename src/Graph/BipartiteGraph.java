@@ -37,7 +37,7 @@ public class BipartiteGraph {
         }
         return true;
     }
-    public boolean isBipartite(int[][] graph) {
+    public boolean isBipartite2(int[][] graph) {
         int n = graph.length;
         List<List<Integer>> adj = new ArrayList<>();
         for(int i = 0; i< n; i++){
@@ -91,5 +91,50 @@ public class BipartiteGraph {
             }
             return bool;
         }
+    }
+
+
+//    By DSU
+
+    public int find(int a, int[] par){
+        if(par[a] == a) return a;
+        return par[a] = find(par[a],par);
+    }
+    public void union(int a, int b, int[] par, int[] size, boolean[] parity){
+        int x = find(a,par);
+        int y = find(b,par);
+        if(x!=y){
+            if(size[x]>size[y]){
+                par[y] = x;
+                size[x] += size[y];
+                parity[b] = !parity[a];
+            }
+            else{
+                par[x] = y;
+                size[y] += size[x];
+                parity[a] = !parity[b];
+            }
+        }
+    }
+    public boolean isBipartite(int[][] graph) {
+        int n = graph.length;
+        int[] par = new int[n];
+        int[] size = new int[n];
+        boolean[] parity = new boolean[n];
+        for(int i = 0; i<n; i++){
+            for(int j = 0; j< graph[i].length; j++){
+                if(i<graph[i][j]){
+                    if(find(i,par)==find(graph[i][j],par)){
+                        if(parity[i]==parity[graph[i][j]]) return false;
+                    }
+                }
+                else{
+                    union(i,graph[i][j],par,size,parity);
+                }
+            }
+        }
+
+        return true;
+
     }
 }
