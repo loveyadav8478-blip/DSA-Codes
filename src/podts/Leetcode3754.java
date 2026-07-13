@@ -1,3 +1,5 @@
+package podts;
+
 public class Leetcode3754 {
     public static void main(String[] args) {
         System.out.println(sumAndMultiply(0));

@@ -1,3 +1,5 @@
+package podts;
+
 public class PODT {
     public static void main(String[] args) {
         System.out.println(processStr("%#bz%xum##i##vzo#pwc*#dkwbh####%uf%s*%cgppqhqa%h#l##o%ij%%cz%iga##e###u%#e####jfwx##%%*x%m*%#",6523));

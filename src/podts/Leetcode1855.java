@@ -1,4 +1,7 @@
-import java.util.*;
+package podts;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Leetcode1855 {
     class Pair{

@@ -1,5 +1,6 @@
+package podts;
+
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class Leetcode1288 {
     public int removeCoveredIntervals(int[][] intervals) {

@@ -1,3 +1,5 @@
+package slidingWindow;
+
 public class ExactlyCase {
     public static void main(String[] args) {
         System.out.println(slidingWindow(new int[]{1,0,1,0,1},2));

@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package podts;
 
 public class Leetcode3756 {
 //    public int[] sumAndMultiply(String s, int[][] queries) {
