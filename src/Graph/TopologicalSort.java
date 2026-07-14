@@ -33,15 +33,15 @@ public class TopologicalSort {
 //        return ans;
 //    }
 
-
-    public ArrayList<Integer> topoSort(int n, int[][] edges) {
+//[[3, 0], [1, 0], [2, 0]]
+    public static ArrayList<Integer> topoSort(int n, int[][] edges) {
         ArrayList<Integer> ans = new ArrayList<>();
         int[] visited = new int[n];
         List<List<Integer>> adj = new ArrayList<>();
         for(int i = 0; i<n ;i++){
             adj.add(new ArrayList<>());
         }
-        for(int i = 0;i < n; i++){
+        for(int i = 0;i < edges.length; i++){
             int u = edges[i][0];
             int v = edges[i][1];
             adj.get(u).add(v);
@@ -55,7 +55,7 @@ public class TopologicalSort {
         return ans;
     }
 
-    private void dfs(int i, int[] visited, List<List<Integer>> adj,ArrayList<Integer> ans) {
+    private static void dfs(int i, int[] visited, List<List<Integer>> adj,ArrayList<Integer> ans) {
         visited[i] = 1;
         for(var e : adj.get(i)){
             if(visited[e]==0){
