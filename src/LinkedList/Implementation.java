@@ -31,18 +31,18 @@ public class Implementation {
                 head = temp;
             }
         }
-        public void insertAt(int idx, int val) {
-            Node temp = head;
+        public void insertAt(int idx, int val){
             Node tar = new Node(val);
-            if (idx == size()) {
+            Node temp = head;
+            if(idx==size()){
                 insertAtTail(val);
                 return;
             }
-            if (idx == 0) {
+            if(idx==0){
                 insertAtHead(val);
                 return;
             }
-            for (int j = 0; j < idx-1; j++) {
+            for(int i = 0; i<idx-1; i++){
                 temp = temp.next;
             }
             tar.next = temp.next;
@@ -104,7 +104,7 @@ public class Implementation {
 //        System.out.println(ll.getAt(4));
 //        System.out.println();
 //        ll.size();
-//        ll.insertAt(0,10);
+        ll.insertAt(3,10);
 //        System.out.println(ll.getAt(4));
 //        ll.display();
 //        System.out.println(ll.size());
