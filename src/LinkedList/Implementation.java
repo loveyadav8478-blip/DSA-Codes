@@ -76,8 +76,10 @@ public class Implementation {
 
         public void deleteAt(int idx) {
             Node temp = head;
-            if (idx == 0) {head = head.next;
-                return;}
+            if (idx == 0) {
+                head = head.next;
+                return;
+            }
             for (int i = 0; i < idx-1; i++) {
                 temp = temp.next;
             }
@@ -88,12 +90,12 @@ public class Implementation {
     public static void main(String[] args) {
         Linkedlist ll = new Linkedlist();
 
-        ll.insertAtHead(12);
-        ll.insertAtTail(4);
-        ll.insertAtTail(5);
-        ll.insertAtTail(6);
-        ll.insertAtTail(7);
-        ll.insertAtTail(2);
+        ll.insertAtHead(10);
+        ll.insertAtTail(20);
+        ll.insertAtTail(30);
+        ll.insertAtTail(40);
+//        ll.insertAtTail(7);
+//        ll.insertAtTail(2);
 //        ll.display();
 //        System.out.println();
 //        System.out.println(deleteMiddle(a));
@@ -104,7 +106,7 @@ public class Implementation {
 //        System.out.println(ll.getAt(4));
 //        System.out.println();
 //        ll.size();
-        ll.insertAt(3,10);
+        ll.deleteAt(3);
 //        System.out.println(ll.getAt(4));
 //        ll.display();
 //        System.out.println(ll.size());
