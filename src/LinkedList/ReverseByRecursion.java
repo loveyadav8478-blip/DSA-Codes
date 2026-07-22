@@ -5,6 +5,14 @@ class ListNode {
     ListNode() {}
     ListNode(int val) { this.val = val; }
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+
+    void display() {
+        ListNode temp = next;
+        while(temp != null){
+            System.out.print(temp.val+" ");
+            temp = temp.next;
+        }
+    }
 }
 public class ReverseByRecursion {
     public ListNode reverseList(ListNode head) {
