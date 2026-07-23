@@ -19,6 +19,7 @@ public class ReorderList {
             prev = curr;
             curr = n;
         }
+
         slow.next = null;
         ListNode t1 = h;
         ListNode t2 = prev;
