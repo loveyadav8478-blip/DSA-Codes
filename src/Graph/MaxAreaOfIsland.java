@@ -3,42 +3,43 @@ package Graph;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Pairr{
+class Pairrr{
     int i;
     int j;
-    Pairr(int i, int j){
+    Pairrr(int i, int j){
         this.i = i;
         this.j = j;
     }
 }
 public class MaxAreaOfIsland {
-    public void bfs(Pairr p, boolean[][] visited, int[][] grid, int[] ans){
+    public void bfs(Pairrr p, boolean[][] visited, int[][] grid, int[] ans){
         int area = 1;
         int m = grid.length;
         int n = grid[0].length;
-        Queue<Pairr> q = new LinkedList<>();
+        Queue<Pairrr> q = new LinkedList<>();
         visited[p.i][p.j] = true;
+
         q.add(p);
         while(!q.isEmpty()){
-            Pairr e = q.poll();
+            Pairrr e = q.poll();
             int i = e.i;
             int j = e.j;
             if(i-1>=0 && !visited[i-1][j] && grid[i-1][j]==1){
                 visited[i-1][j] = true;
-                q.add(new Pairr(i-1,j));
+                q.add(new Pairrr(i-1,j));
                 area++;
             }
             if(i<m-1 && !visited[i+1][j] && grid[i+1][j]==1){
                 visited[i+1][j] = true;
-                q.add(new Pairr(i+1,j));
+                q.add(new Pairrr(i+1,j));
                 area++;
             }if(j-1>=0 && !visited[i][j-1] && grid[i][j-1]==1){
                 visited[i][j-1] = true;
-                q.add(new Pairr(i,j-1));
+                q.add(new Pairrr(i,j-1));
                 area++;
             }if(j<n-1 && !visited[i][j+1] && grid[i][j+1]==1){
                 visited[i][j+1] = true;
-                q.add(new Pairr(i,j+1));
+                q.add(new Pairrr(i,j+1));
                 area++;
             }
         }
@@ -53,7 +54,7 @@ public class MaxAreaOfIsland {
         for(int i = 0; i< m; i++){
             for(int j = 0; j< n; j++){
                 if(!visited[i][j] && grid[i][j]==1){
-                    bfs(new Pairr(i,j),visited,grid,ans);
+                    bfs(new Pairrr(i,j),visited,grid,ans);
                     a = Math.max(ans[0],a);
                 }
             }
