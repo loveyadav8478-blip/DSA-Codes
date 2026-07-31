@@ -1,4 +1,5 @@
 package Stacks;
+import java.util.PriorityQueue;
 import java.util.Stack;
 public class NextGreaterElement {
     public static void main(String[] args) {
@@ -12,7 +13,7 @@ public class NextGreaterElement {
             while(arr[i]>st.peek() && st.size()>0){
                 st.pop();
             }
-            if (st.size() == 0) res[i] = -1;
+            if (st.isEmpty()) res[i] = -1;
             else res[i] = st.peek();
             st.push(arr[i]);
         }
@@ -23,5 +24,6 @@ public class NextGreaterElement {
         for (int i = 0; i < n; i++) {
             System.out.print(res[i]+" ");
         }
+        PriorityQueue<Integer> q = new PriorityQueue<>(Collection.reverseOrder());
     }
 }
