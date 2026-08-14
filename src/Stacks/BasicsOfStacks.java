@@ -7,6 +7,10 @@ public class BasicsOfStacks {
         st.push(2);
         st.push(3);
         st.push(4);
+        Stack<Integer> t = st;
+        st.clear();
+        System.out.println(st);
+        System.out.println(t);
         System.out.println(st);
         Stack<Integer> rt = new Stack<>();
         while(!st.isEmpty()){

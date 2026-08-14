@@ -112,10 +112,9 @@ public class basicOfDLL {
         Node right = tail;
         while (left != right) {
             if (left.val != right.val) return false;
-        }
             left = left.next;
             right = right.prev;
-
+        }
         return true;
     }
     public static int twoSum(Node head, int target){
@@ -205,7 +204,7 @@ public class basicOfDLL {
 //        display(aa);
 //        display(a);
 //        displayRev(e);
-//        display2(e);
+        display2(e);
 //        display(a);
 //        Node nHead = insertAtHead(a,30);
 //        Node nTail = insertAtTail(a,30);
