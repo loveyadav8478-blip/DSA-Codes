@@ -10,7 +10,7 @@ public class infix {
             char ch = s.charAt(i);
             int asci = (int)ch;
             if(asci >= 48 && asci <= 57) val.push(asci-'0');
-            else if(op.size()==0 || op.peek() == '(' || ch == '(') op.push(ch);
+            else if(op.isEmpty() || op.peek() == '(' || ch == '(') op.push(ch);
             else if (ch==')') {
                 while (op.peek() != '(') {
                     int v2 = val.pop();
